@@ -1,0 +1,29 @@
+{% extends 'tapasapp/base.html' %}
+{% load static %}
+
+
+
+                {% block content %}
+                <div class="col-12">
+                    <table class="table table-striped">
+                        <thead >
+                            <tr>
+                                <th class="table-dark" scope="col"> Name </th>
+                                <th class="table-dark" scope="col"> Cooking Time </th>
+                                <th class="table-dark" scope="col"> Prep Time </th>    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for d in dishes %}
+                            <tr>
+                                <td> {{ d.name }} </td>
+                                <td> {{ d.prep_time }} </td>
+                                <td> {{ d.cook_time }} </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endblock %}
+
+            
