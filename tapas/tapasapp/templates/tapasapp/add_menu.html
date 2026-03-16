@@ -1,0 +1,34 @@
+{% extends 'tapaspp/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-4">
+    <h3>Type in Dish Details:</h3>
+
+    <form>
+        <div class="form-group mb-3">
+            <label>Name:</label>
+            <input type="text" class="form-control" name="dish_name">
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label>Cook Time:</label>
+                <input type="number" class="form-control" name="cook_time">
+            </div>
+
+            <div class="col-md-6">
+                <label>Prep Time:</label>
+                <input type="number" class="form-control" name="prep_time">
+            </div>
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-secondary">
+            Add to dishes
+        </button>
+    </form>
+</div>
+
+{% endblock %}
