@@ -1,7 +1,14 @@
 {% extends 'tapasapp/base.html' %}
 {% load static %}
-{% block content %}
 
+{% block side_menu %}
+<ul>
+    <li><a href="{% url 'view_menu' %}">Back to main</a></li>
+</ul>
+{% endblock %}
+
+
+{% block content %}
 <div class="container mt-4">
     <h3>Type in Dish Details:</h3>
 
