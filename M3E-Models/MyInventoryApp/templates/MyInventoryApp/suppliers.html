@@ -1,23 +1,26 @@
 {% extends "MyInventoryApp/base.html" %}
 {% block content %}
+<h2>Supplier List</h2>
 
-<table border="1" cellpadding="40">
+<table border="1">
+    <thead>
         <tr>
-            <th>Supplier Name</th>
-            <th>Brands</th>
-            <th>Cost of Product</th>
-            <th>Current Quality</th>
-
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Created At</th>
         </tr>
-        {% for bottle in bottles %}
+    </thead>
+    <tbody>
+        {% for supplier in suppliers %}
         <tr>
-            <td>{{ bottle.supplier.name }}</td>
-            <td>{{ bottle.brand }}</td>
-            <td>{{ bottle.cost }}</td>
-            <td>{{ bottle.current_quantity }}</td>
+            <td>{{ supplier.name }}</td>
+            <td>{{ supplier.city }}</td>
+            <td>{{ supplier.country }}</td>
+            <td>{{ supplier.created_at }}</td>
         </tr>
         {% endfor %}
-    </table>
+    </tbody>
+</table>
 
-</body>
 {% endblock %}
