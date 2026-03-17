@@ -1,65 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Inventory System</title>
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
+{% extends "MyInventoryApp/base.html" %}
+{% block content %}
 
-        header{
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
+<table border="1" cellpadding="40">
+        <tr>
+            <th>Supplier Name</th>
+            <th>Brands</th>
+            <th>Cost of Product</th>
+            <th>Current Quality</th>
 
-        nav{
-            background-color: #34495e;
-            padding: 10px;
-        }
-
-        nav a{
-            color: white;
-            margin-right: 15px;
-            text-decoration: none;
-        }
-
-        .container{
-            padding: 20px;
-            background: white;
-            margin: 20px;
-        }
-
-        footer{
-            text-align: center;
-            padding: 10px;
-            background: #2c3e50;
-            color: white;
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <h1>My Inventory System</h1>
-</header>
-
-<nav>
-    <a href="/">Home</a>
-    <a href="/view_supplier">Suppliers</a>
-</nav>
-
-<div class="container">
-    {% block content %}
-    {% endblock %}
-</div>
-
-<footer>
-    <p>Inventory System © 2026</p>
-</footer>
+        </tr>
+        {% for bottle in bottles %}
+        <tr>
+            <td>{{ bottle.supplier.name }}</td>
+            <td>{{ bottle.brand }}</td>
+            <td>{{ bottle.cost }}</td>
+            <td>{{ bottle.current_quantity }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
 </body>
-</html>
+{% endblock %}
