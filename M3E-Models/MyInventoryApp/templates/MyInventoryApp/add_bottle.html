@@ -1,0 +1,46 @@
+{% extends "MyInventoryApp/base.html" %}
+{% block content %}
+<h3>Add a Water Bottle: </h3>
+
+<form>
+    <table cellpadding = "20">
+        <tr>
+            <td><label>SKU:</label></td>
+            <td><input type="text" name="sku" min="1"></td>
+        </tr>
+        <tr>
+            <td><label>Brand:</label></td>
+            <td><input type="text" name="brand"></td>
+        </tr>
+        <tr>
+            <td><label>Cost:</label></td>
+            <td><input type="number" name="cost" step="0.01" min="0"></td>
+        </tr>
+        <tr>
+            <td><label>Size:</label></td>
+            <td><input type="text" name="size"></td>
+        </tr>
+        <tr>
+            <td><label>Mouth Size:</label></td>
+            <td><input type="text" name="mouth_size"></td>
+        </tr>
+        <tr>
+            <td><label>Color:</label></td>
+            <td><input type="text" name="color"></td>
+        </tr>
+        <tr>
+            <td><label>Supplier:</label></td>
+            <td><input type = text name="supplier"></td>
+        </tr>
+        <tr>
+            <td><label>Current Quantity:</label></td>
+            <td><input type="number" name="current_quantity" min="0"></td>
+        </tr>
+        <tr>
+            <td><button type="submit" value="Add Bottle">Add Bottle</button></td>
+        </tr>
+    </table>
+    
+</form> 
+ 
+{% endblock %}
